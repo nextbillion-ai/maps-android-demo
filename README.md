@@ -32,13 +32,13 @@ maven {
 url "https://oss.sonatype.org/content/repositories/ainextbillion-1041/"
 }
 maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1042/"
+url "https://oss.sonatype.org/content/repositories/ainextbillion-1044/"
 }
 ```
 
-the latest version of Maps SDK is `0.2.2`
+the latest version of Maps SDK is `0.3.0`
 ```groovy
-implementation "ai.nextbillion:android-sdk:0.2.2"
+implementation "ai.nextbillion:android-sdk:0.3.0"
 ```
 
 ### Token
