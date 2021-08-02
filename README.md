@@ -192,7 +192,7 @@ mMap.addMarker(new LatLng(40.38532445, -82.91441935));
 
 
 
-###Marker events
+### Marker events
 
 ```java
 /**
