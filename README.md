@@ -205,6 +205,18 @@ public void setOnMarkerClickListener(@Nullable OnMarkerClickListener listener) {
     annotationManager.setOnMarkerClickListener(listener);
 }
 ```
+Example
+```java
+mMap.setOnMarkerClickListener(new NbmapMap.OnMarkerClickListener() {
+   @Override
+   public boolean onMarkerClick(@NonNull Marker marker) {
+       if("Title".equals(marker.getSnippet())){
+           //your logic
+       }
+       return false;
+   }
+});
+```
 
 
 
@@ -285,6 +297,15 @@ public void setOnPolylineClickListener(@Nullable OnPolylineClickListener listene
 annotationManager.setOnPolylineClickListener(listener);
 }
 ```
+Example
+```java
+ mMap.setOnPolylineClickListener(new NbmapMap.OnPolylineClickListener() {
+     @Override
+     public void onPolylineClick(@NonNull Polyline polyline) {
+                
+     }
+ });
+```
 
 
 
@@ -318,6 +339,15 @@ nbMapAPI.addPolygon(points, 0xffff0000);
 public void setOnPolygonClickListener(@Nullable OnPolygonClickListener listener) {
     annotationManager.setOnPolygonClickListener(listener);
 }
+```
+Example
+```java
+  mMap.setOnPolygonClickListener(new NbmapMap.OnPolygonClickListener() {
+      @Override
+      public void onPolygonClick(@NonNull Polygon polygon) {
+                
+      }
+  );
 ```
 
 ## Tile server configuration
