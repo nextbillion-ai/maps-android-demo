@@ -37,6 +37,7 @@ url "https://oss.sonatype.org/content/repositories/ainextbillion-1044/"
 ```
 
 the latest version of Maps SDK is `0.3.0`
+please noted that this version is only for testing purposes, for production or release version, please reach out to the Nextbillion team and confirm the actual released version.
 ```groovy
 implementation "ai.nextbillion:android-sdk:0.3.0"
 ```
@@ -44,6 +45,17 @@ implementation "ai.nextbillion:android-sdk:0.3.0"
 ### Token
 ```xml
 <string name="nbmap_access_token">your-testing-key</string>
+```
+
+### Base API Url
+```xml
+<string name="nbmap_api_base_url">http://test.nextbillion.io</string>
+```
+
+### App level base url
+*Currently this field is not in use, no configuration is required*
+```xml
+<string name="nbmap_base_url">base url</string>
 ```
 
 
