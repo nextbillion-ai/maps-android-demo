@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ai.nextbillion">
+
+    <application
+        android:name=".DemoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NBMapsDemoApp">
+        <activity android:name=".overview.OverviewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MarkerActivity"
+            android:description="@string/marker_desc"
+            android:label="@string/marker">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".CustomInfoWindowActivity"
+            android:description="@string/info_window_desc"
+            android:label="@string/info_window">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".PolylineActivity"
+            android:description="@string/polyline_desc"
+            android:label="@string/polyline">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".PolygonActivity"
+            android:description="@string/polygon_desc"
+            android:label="@string/polygon">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:description="@string/simple_map_desc"
+            android:label="@string/simple_map">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".DirectionsActivity"
+            android:description="@string/directions_desc"
+            android:label="@string/directions">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".SnapToRoadsActivity"
+            android:description="@string/matching_desc"
+            android:label="@string/matching">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".DistanceMatrixActivity"
+            android:description="@string/distance_matrix_desc"
+            android:label="@string/distance_matrix">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+    </application>
+
+</manifest>

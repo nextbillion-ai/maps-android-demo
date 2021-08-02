@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nbmap_access_token">your-testing-key</string>
+    <string name="nbmap_base_url">app level base url</string>
+    <string name="nbmap_api_base_url">base url for Nextbillion API client</string>
+</resources>
