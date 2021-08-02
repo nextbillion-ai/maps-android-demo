@@ -1,10 +1,12 @@
 package ai.nextbillion;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.nbmap.nbmapsdk.annotations.IconFactory;
 import com.nbmap.nbmapsdk.annotations.Marker;
 import com.nbmap.nbmapsdk.annotations.MarkerOptions;
 import com.nbmap.nbmapsdk.geometry.LatLng;
@@ -48,6 +50,7 @@ public class MarkerActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap.removeMarker(marker);
         mMap.addMarker(new MarkerOptions().position(new LatLng(39.99532445, -82.93441935)).title("Title"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(39.99532445, -82.93441935)).snippet("Snippet"));
+
     }
 
     ///////////////////////////////////////////////////////////////////////////
