@@ -44,14 +44,12 @@ public class PolygonActivity extends AppCompatActivity {
         //40.78423933,-81.28804516
         //41.57620605,-81.20362237
         List<LatLng> points = new ArrayList<>();
-        points.add(new LatLng(41.75615968, -81.28450368));
-        points.add(new LatLng(41.49947295, -81.70412891));
-        points.add(new LatLng(41.49721472, -82.00865398));
-        points.add(new LatLng(40.79108785, -81.90915569));
-        points.add(new LatLng(40.78423933, -81.28804516));
-        points.add(new LatLng(41.57620605, -81.20362237));
-        String clevelandCavaliersColorWine = "#336f263d";
-        mMap.addPolygon(points, clevelandCavaliersColorWine);
+        points.add(new LatLng(12.94798778,77.57375084));
+        points.add(new LatLng(12.93669616,77.57385337));
+        points.add(new LatLng(12.93639637,77.58031279));
+        points.add(new LatLng(12.94808770,77.58000520));
+        String bengaluruColor = "#EC2227";
+        mMap.addPolygon(points, bengaluruColor);
     }
 
     ///////////////////////////////////////////////////////////////////////////

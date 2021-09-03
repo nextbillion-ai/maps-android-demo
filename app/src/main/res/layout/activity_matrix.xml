@@ -10,8 +10,8 @@
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:nbmap_cameraTargetLat="39.11738143"
-        app:nbmap_cameraTargetLng="-84.51176632"
+        app:nbmap_cameraTargetLat="12.94296335"
+        app:nbmap_cameraTargetLng="77.60676039"
         app:nbmap_cameraZoom="12" />
 
     <LinearLayout

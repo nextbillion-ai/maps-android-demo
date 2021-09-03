@@ -54,8 +54,8 @@ public class CustomInfoWindowActivity  extends AppCompatActivity implements OnMa
     ///////////////////////////////////////////////////////////////////////////
 
     private void addMarker() {
-        mMap.addMarker(new CustomMarkerOptions().position(new LatLng(40.39532445, -82.91441935)).title("test Red InfoWindow").infoWindowColor(Color.RED));
-        mMap.addMarker(new CustomMarkerOptions().position(new LatLng(40.41532445, -82.95441935)).title("test Blue InfoWindow").infoWindowColor(Color.BLUE));
+        mMap.addMarker(new CustomMarkerOptions().position(new LatLng(12.97780156,77.59656748)).title("test Red InfoWindow").infoWindowColor(Color.RED));
+        mMap.addMarker(new CustomMarkerOptions().position(new LatLng(12.98208919,77.60329262)).title("test Blue InfoWindow").infoWindowColor(Color.BLUE));
     }
 
 

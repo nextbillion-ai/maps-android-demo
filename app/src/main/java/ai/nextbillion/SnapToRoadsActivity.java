@@ -42,9 +42,9 @@ public class SnapToRoadsActivity extends AppCompatActivity {
     private void showMatchedRoute() {
         NBMapAPIClient client = new NBMapAPIClient();
         List<NBLocation> locations = new ArrayList<NBLocation>();
-        locations.add(new NBLocation(39.93925482, -83.01345415));
-        locations.add(new NBLocation(39.95389774, -83.03698750));
-        locations.add(new NBLocation(39.96126687, -83.01144635));
+        locations.add(new NBLocation(12.94685395,77.57421511));
+        locations.add(new NBLocation(12.96087173,77.57567788));
+        locations.add(new NBLocation(12.96628856,77.58859895));
         client.showMatchedRoute(locations, nbmapMap, SnapToRoadsActivity.this);
     }
 

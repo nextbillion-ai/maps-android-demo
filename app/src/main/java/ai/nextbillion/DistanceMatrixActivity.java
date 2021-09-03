@@ -156,10 +156,10 @@ public class DistanceMatrixActivity extends AppCompatActivity implements OnMapRe
 
     List<NBDistanceMatrixRow> rows = new ArrayList<>();
     NBRouteLine currentRoute;
-    NBLocation origin1 = new NBLocation(39.11964617, -84.52494380);
-    NBLocation origin2 = new NBLocation(39.10625083, -84.51918908);
-    NBLocation destination1 = new NBLocation(39.12631053, -84.50184151);
-    NBLocation destination2 = new NBLocation(39.11673435, -84.49742122);
+    NBLocation origin1 = new NBLocation(12.95465824,77.57983723);
+    NBLocation origin2 = new NBLocation(12.91657288,77.58029877);
+    NBLocation destination1 = new NBLocation(12.96020562,77.64214511);
+    NBLocation destination2 = new NBLocation(12.91702274,77.62291428);
 
     private void calcDistanceMatrix() {
         //O1 39.11964617,-84.52494380

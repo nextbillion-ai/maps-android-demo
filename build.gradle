@@ -23,7 +23,7 @@ allprojects {
             url "https://oss.sonatype.org/content/repositories/ainextbillion-1046/"
         }
         maven {
-            url "https://oss.sonatype.org/content/repositories/ainextbillion-1047/"
+            url "https://oss.sonatype.org/content/repositories/ainextbillion-1049/"
         }
     }
 }

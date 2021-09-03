@@ -44,10 +44,10 @@ public class MarkerActivity extends AppCompatActivity implements OnMapReadyCallb
     ///////////////////////////////////////////////////////////////////////////
 
     private void addMarker() {
-        Marker marker = mMap.addMarker(new LatLng(39.98532445, -82.91441935));
+        Marker marker = mMap.addMarker(new LatLng(12.97551913,77.58917229));
         mMap.removeMarker(marker);
-        mMap.addMarker(new MarkerOptions().position(new LatLng(39.99532445, -82.93441935)).title("Title"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(39.99532445, -82.93441935)).snippet("Snippet"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(12.97780156,77.59656748)).title("Title"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(12.98208919,77.60329262)).snippet("Snippet"));
     }
 
     ///////////////////////////////////////////////////////////////////////////

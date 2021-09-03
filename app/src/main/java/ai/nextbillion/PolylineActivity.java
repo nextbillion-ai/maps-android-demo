@@ -32,11 +32,10 @@ public class PolylineActivity extends AppCompatActivity {
 
     private void applyPolyline() {
         List<LatLng> points = new ArrayList<>();
-        points.add(new LatLng(39.126646, -84.501918));
-        points.add(new LatLng(39.128318, -84.525443));
-        points.add(new LatLng(39.120644, -84.52626));
-        points.add(new LatLng(39.116058, -84.52184));
-        points.add(new LatLng(39.106345, -84.519213));
+        points.add(new LatLng(12.92948165,77.61501446));
+        points.add(new LatLng(12.95205978,77.60494206));
+        points.add(new LatLng(12.96612918,77.60678866));
+        points.add(new LatLng(12.96449325,77.59654839));
         String cincinnatiRedsColor = "#C6011F";
         Polyline polyline = mMap.addPolyline(points, cincinnatiRedsColor);
         polyline.setWidth(5);
