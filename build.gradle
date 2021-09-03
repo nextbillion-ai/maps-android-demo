@@ -17,13 +17,13 @@ allprojects {
         google()
         jcenter()
         maven {
-            url "https://oss.sonatype.org/content/repositories/ainextbillion-1040/"
+            url "https://oss.sonatype.org/content/repositories/ainextbillion-1045/"
         }
         maven {
-            url "https://oss.sonatype.org/content/repositories/ainextbillion-1041/"
+            url "https://oss.sonatype.org/content/repositories/ainextbillion-1046/"
         }
         maven {
-            url "https://oss.sonatype.org/content/repositories/ainextbillion-1044/"
+            url "https://oss.sonatype.org/content/repositories/ainextbillion-1047/"
         }
     }
 }
