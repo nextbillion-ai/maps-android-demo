@@ -26,20 +26,20 @@ To download the SDK please add maven repositories below to your project’s top-
 
 ```groovy
 maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1040/"
+url "https://oss.sonatype.org/content/repositories/ainextbillion-1045/"
 }
 maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1041/"
+url "https://oss.sonatype.org/content/repositories/ainextbillion-1046/"
 }
 maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1044/"
+url "https://oss.sonatype.org/content/repositories/ainextbillion-1049/"
 }
 ```
 
-the latest version of Maps SDK is `0.3.0`
+the latest version of Maps SDK is `0.3.1`
 please noted that this version is only for testing purposes, for production or release version, please reach out to the Nextbillion team and confirm the actual released version.
 ```groovy
-implementation "ai.nextbillion:android-sdk:0.3.0"
+implementation "ai.nextbillion:android-sdk:0.3.1"
 ```
 
 ### Token
@@ -49,7 +49,7 @@ implementation "ai.nextbillion:android-sdk:0.3.0"
 
 ### Base API Url
 ```xml
-<string name="nbmap_api_base_url">http://test.nextbillion.io</string>
+<string name="nbmap_api_base_url">http://api.nextbillion.io</string>
 ```
 
 ### App level base url
@@ -163,7 +163,7 @@ public void onLowMemory() {
 ```java
     int millisecondSpeed = 300;
     CameraPosition position = new CameraPosition.Builder()
-         .target(new LatLng(39.106345, -84.519213))
+         .target(new LatLng(12.97551913,77.58917229))
          .zoom(12)
          .tilt(20)
          .build();
@@ -187,7 +187,7 @@ public List<Marker> addMarkers(@NonNull List<? extends BaseMarkerOptions> marker
 
 Example
 ```java
-mMap.addMarker(new LatLng(40.38532445, -82.91441935));
+mMap.addMarker(new LatLng(12.97551913,77.58917229));
 ```
 
 
@@ -223,7 +223,7 @@ mMap.setOnMarkerClickListener(new NbmapMap.OnMarkerClickListener() {
 ### Update a Marker
 Whenever you have added a marker to the NbmapMap, you will get an instance of Marker.
 ```java
-Marker marker = mMap.addMarker(new LatLng(40.38532445, -82.91441935));
+Marker marker = mMap.addMarker(new LatLng(12.97551913,77.58917229));
 ```
 
 with this instance, you can update it’s properties dynamically:
@@ -244,8 +244,8 @@ mMap.removeMarker(marker);
 ### Info Window
 The Marker has a built-in InfoWindow, you can show InfoWindow by clicking on the Marker if you have assigned a title or snippet to your MarkerOptions.
 ```java
-mMap.addMarker(new MarkerOptions().position(new LatLng(40.39532445, -82.93441935)).title("Title"));
-mMap.addMarker(new MarkerOptions().position(new LatLng(40.39532445, -82.93441935)).snippet("Snippet"));
+mMap.addMarker(new MarkerOptions().position(new LatLng(12.97780156,77.59656748)).title("Title"));
+mMap.addMarker(new MarkerOptions().position(new LatLng(12.98208919,77.60329262)).snippet("Snippet"));
 ```
 
 #### Customise InfoWindow
@@ -381,8 +381,8 @@ public void showDirections(NBLocation origin, NBLocation dest, final NbmapMap nb
 ```java
 NBMapAPIClient client = new NBMapAPIClient();
 client.showDirections(
-new NBLocation(40.38532445, -82.91441935),
-new NBLocation(40.3879395, -83.03080577),
+new NBLocation(12.96206481,77.56687669),
+new NBLocation(12.99150562,77.61940507),
 nbmapMap, DirectionsActivity.this);
 
 //OR
@@ -444,9 +444,9 @@ public void showMatchedRoute(List<NBLocation> path, final NbmapMap map, final Co
 private void showMatchedRoute() {
     NBMapAPIClient client = new NBMapAPIClient();
     List<NBLocation> locations = new ArrayList<NBLocation>();
-    locations.add(new NBLocation(39.93925482,-83.01345415));
-    locations.add(new NBLocation(39.95389774,-83.03698750));
-    locations.add(new NBLocation(39.96126687,-83.01144635));
+    locations.add(new NBLocation(12.94685395,77.57421511));
+    locations.add(new NBLocation(12.96087173,77.57567788));
+    locations.add(new NBLocation(12.96628856,77.58859895));
     client.showMatchedRoute(locations, nbmapMap, SnapToRoadsActivity.this);
 }
 ```
