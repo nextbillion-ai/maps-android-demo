@@ -9,6 +9,7 @@
     <string name="directions">Directions Demo</string>
     <string name="matching">Snap to Roads Demo</string>
     <string name="distance_matrix">DistanceMatrix Demo</string>
+    <string name="snapshot">Snapshot Demo</string>
 
     <string name="marker_desc">Marker Demo</string>
     <string name="info_window_desc">InfoWindows with customised background colors</string>
@@ -18,4 +19,5 @@
     <string name="directions_desc">Directions Demo</string>
     <string name="matching_desc">Snap to Roads Demo</string>
     <string name="distance_matrix_desc">DistanceMatrix Demo</string>
+    <string name="snapshot_desc">Snapshot Demo</string>
 </resources>

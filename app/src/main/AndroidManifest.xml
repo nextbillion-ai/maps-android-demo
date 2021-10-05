@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ai.nextbillion">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".DemoApplication"
@@ -77,6 +78,14 @@
             android:name=".DistanceMatrixActivity"
             android:description="@string/distance_matrix_desc"
             android:label="@string/distance_matrix">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".SnapshotActivity"
+            android:description="@string/snapshot_desc"
+            android:label="@string/snapshot">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".overview.OverviewActivity" />

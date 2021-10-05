@@ -37,12 +37,6 @@ public class PolygonActivity extends AppCompatActivity {
 
     //center 41.21431566,-81.63779672
     private void applyPolygon() {
-        //41.73164917,-81.26090926
-        //41.49947295,-81.70412891
-        //41.49721472,-82.00865398
-        //40.79108785,-81.90915569
-        //40.78423933,-81.28804516
-        //41.57620605,-81.20362237
         List<LatLng> points = new ArrayList<>();
         points.add(new LatLng(12.94798778,77.57375084));
         points.add(new LatLng(12.93669616,77.57385337));
