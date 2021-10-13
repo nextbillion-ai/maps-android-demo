@@ -10,8 +10,8 @@
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:nbmap_cameraTargetLat="40.38532445"
-        app:nbmap_cameraTargetLng="-82.91441935"
+        app:nbmap_cameraTargetLat="37.753574"
+        app:nbmap_cameraTargetLng="-122.429023"
         app:nbmap_cameraZoom="10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
