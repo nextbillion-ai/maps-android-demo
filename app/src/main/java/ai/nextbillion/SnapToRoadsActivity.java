@@ -45,7 +45,7 @@ public class SnapToRoadsActivity extends AppCompatActivity {
         locations.add(new NBLocation(12.94685395,77.57421511));
         locations.add(new NBLocation(12.96087173,77.57567788));
         locations.add(new NBLocation(12.96628856,77.58859895));
-        client.showMatchedRoute(locations, nbmapMap, SnapToRoadsActivity.this);
+        client.showMatchedRoute(locations, "test_matched_route", nbmapMap, SnapToRoadsActivity.this);
     }
 
     ///////////////////////////////////////////////////////////////////////////

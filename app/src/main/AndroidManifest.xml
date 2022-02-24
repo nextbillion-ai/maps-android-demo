@@ -90,6 +90,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".overview.OverviewActivity" />
         </activity>
+        <activity
+            android:name=".AnimateMarkersActivity"
+            android:description="@string/animate_marker_desc"
+            android:label="@string/animate_marker">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
     </application>
 
 </manifest>

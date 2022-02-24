@@ -47,6 +47,7 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
         client.showDirections(
                 new NBLocation(12.96206481,77.56687669),
                 new NBLocation(12.99150562,77.61940507),
+                "test_directions",
                 nbmapMap, DirectionsActivity.this);
     }
 
