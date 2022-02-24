@@ -174,16 +174,16 @@ public class AnimateMarkersActivity extends AppCompatActivity implements OnMapRe
     private void animateTaxis(){
         final Taxi longestDrive = getLongestDrive();
         final Random random = new Random();
-        for (final Taxi car : taxis) {
-            final boolean isLongestDrive = longestDrive.equals(car);
-            ValueAnimator valueAnimator = ValueAnimator.ofObject(new LatLngEvaluator(), car.current, car.next);
+        for (final Taxi taxi : taxis) {
+            final boolean isLongestDrive = longestDrive.equals(taxi);
+            ValueAnimator valueAnimator = ValueAnimator.ofObject(new LatLngEvaluator(), taxi.current, taxi.next);
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 private LatLng latLng;
 
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     latLng = (LatLng) animation.getAnimatedValue();
-                    car.current = latLng;
+                    taxi.current = latLng;
                     if (isLongestDrive) {
                         updateTaxisSource();;
                     }
@@ -205,13 +205,13 @@ public class AnimateMarkersActivity extends AppCompatActivity implements OnMapRe
                 @Override
                 public void onAnimationStart(Animator animation) {
                     super.onAnimationStart(animation);
-                    car.feature.properties().addProperty("bearing", Taxi.getBearing(car.current, car.next));
+                    taxi.feature.properties().addProperty("bearing", Taxi.getBearing(taxi.current, taxi.next));
                 }
             });
 
             int offset = random.nextInt(2) == 0 ? 0 : random.nextInt(1000) + 250;
             valueAnimator.setStartDelay(offset);
-            valueAnimator.setDuration(car.duration - offset);
+            valueAnimator.setDuration(taxi.duration - offset);
             valueAnimator.setInterpolator(new LinearInterpolator());
             valueAnimator.start();
 
