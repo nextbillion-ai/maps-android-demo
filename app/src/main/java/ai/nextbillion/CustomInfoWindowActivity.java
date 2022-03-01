@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,7 +23,9 @@ import com.nbmap.nbmapsdk.maps.NbmapMap;
 import com.nbmap.nbmapsdk.maps.OnMapReadyCallback;
 import com.nbmap.nbmapsdk.maps.Style;
 
-public class CustomInfoWindowActivity  extends AppCompatActivity implements OnMapReadyCallback {
+import ai.nextbillion.utils.SymbolGenerator;
+
+public class CustomInfoWindowActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private MapView mapView;
     private NbmapMap mMap;
@@ -49,13 +52,21 @@ public class CustomInfoWindowActivity  extends AppCompatActivity implements OnMa
         });
     }
 
+
     ///////////////////////////////////////////////////////////////////////////
     //
     ///////////////////////////////////////////////////////////////////////////
 
+    private Bitmap generateTextIcon() {
+//        View view = LayoutInflater.from(this).inflate(R.layout.text_marker_layout, mapView, false);
+        View view = LayoutInflater.from(this).inflate(R.layout.custom_marker_layout, mapView, false);
+        return SymbolGenerator.generate(view);
+    }
+
     private void addMarker() {
-        mMap.addMarker(new CustomMarkerOptions().position(new LatLng(12.97780156,77.59656748)).title("test Red InfoWindow").infoWindowColor(Color.RED));
-        mMap.addMarker(new CustomMarkerOptions().position(new LatLng(12.98208919,77.60329262)).title("test Blue InfoWindow").infoWindowColor(Color.BLUE));
+        Bitmap iconBitmap = generateTextIcon();
+        Icon icon = IconFactory.getInstance(this).fromBitmap(iconBitmap);
+        mMap.addMarker(new CustomMarkerOptions().icon(icon).position(new LatLng(12.97780156, 77.59656748)));
     }
 
 
@@ -70,10 +81,12 @@ public class CustomInfoWindowActivity  extends AppCompatActivity implements OnMa
             public View getInfoWindow(@NonNull Marker marker) {
                 String title = marker.getTitle();
                 if (marker instanceof CustomMarker) {
-                    int color = ((CustomMarker) marker).getInfoWindowColor();
-                    TextView textView = defaultTextView(title);
-                    textView.setBackgroundColor(color);
-                    return textView;
+                    View infoWidow = LayoutInflater.from(CustomInfoWindowActivity.this).inflate(R.layout.custom_info_window, mapView, false);
+                    TextView infoText = infoWidow.findViewById(R.id.info_text);
+//                    int color = ((CustomMarker) marker).getInfoWindowColor();
+//                    TextView textView = defaultTextView(title);
+//                    textView.setBackgroundColor(color);
+                    return infoWidow;
                 }
 
                 return defaultTextView(title);

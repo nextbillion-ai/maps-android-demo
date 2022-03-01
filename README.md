@@ -21,25 +21,15 @@ the second part is Nextbillion API
 ## Installation
 
 ### Maven
-Our Maps SDK is currently under development, we are providing our SDK on staging repositories of Apache Central Maven
-To download the SDK please add maven repositories below to your project’s top-level build.gradle
+To download the SDK please make sure you have added mavenCentral() to your project’s top-level build.gradle
 
 ```groovy
-maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1045/"
-}
-maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1046/"
-}
-maven {
-url "https://oss.sonatype.org/content/repositories/ainextbillion-1049/"
-}
+mavenCentral()
 ```
 
-the latest version of Maps SDK is `0.3.1`
-please noted that this version is only for testing purposes, for production or release version, please reach out to the Nextbillion team and confirm the actual released version.
+module level build.gradle
 ```groovy
-implementation "ai.nextbillion:android-sdk:0.3.1"
+implementation "ai.nextbillion:android-maps-sdk:1.0.5"
 ```
 
 ### Token

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#00000000">
+
+    <View
+        android:id="@+id/left_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="-20dp"
+        android:background="@drawable/info_window_circle" />
+
+    <View
+        android:id="@+id/right_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="-20dp"
+        android:layout_toRightOf="@+id/text"
+        android:background="@drawable/info_window_circle" />
+
+    <FrameLayout
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/left_circle"
+        android:background="#68AA68"
+        android:minWidth="100dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Yeswanthpur, 23"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+    <View
+        android:layout_marginTop="-2dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-8dp"
+        android:background="@drawable/info_window_arrow_down" />
+</RelativeLayout>

@@ -42,7 +42,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DirectionsActivity extends AppCompatActivity implements OnMapReadyCallback, NbmapMap.OnMapClickListener {
+public class AnimateAlongRouteActivity extends AppCompatActivity implements OnMapReadyCallback, NbmapMap.OnMapClickListener {
     private static final String VEHICLE_ICON_ID = "Vehicle-symbol-Icon";
     private NbmapMap nbmapMap;
     private MapView mapView;
@@ -65,7 +65,7 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     public void onMapReady(@NonNull NbmapMap nbmapMap) {
         this.nbmapMap = nbmapMap;
-        nbmapMap.addOnMapClickListener(DirectionsActivity.this);
+        nbmapMap.addOnMapClickListener(AnimateAlongRouteActivity.this);
         nbmapMap.getStyle(new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
@@ -140,7 +140,7 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
             GeoJsonOptions geoJsonOptions = new GeoJsonOptions().withTolerance(0.4f);
             symbolManager = new SymbolManager(mapView, nbmapMap, style, null, geoJsonOptions);
             symbolManager.addClickListener(symbol -> {
-                Toast.makeText(DirectionsActivity.this,
+                Toast.makeText(AnimateAlongRouteActivity.this,
                         String.format("Symbol clicked %s", symbol.getId()),
                         Toast.LENGTH_SHORT
                 ).show();
@@ -245,7 +245,7 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
             GeoJsonOptions geoJsonOptions = new GeoJsonOptions().withTolerance(0.4f);
             symbolManager = new SymbolManager(mapView, nbmapMap, style, null, geoJsonOptions);
             symbolManager.addClickListener(symbol -> {
-                Toast.makeText(DirectionsActivity.this,
+                Toast.makeText(AnimateAlongRouteActivity.this,
                         String.format("Symbol clicked %s", symbol.getId()),
                         Toast.LENGTH_SHORT
                 ).show();
@@ -277,3 +277,4 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
     }
 
 }
+

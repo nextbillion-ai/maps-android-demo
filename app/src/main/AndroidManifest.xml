@@ -98,6 +98,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".overview.OverviewActivity" />
         </activity>
+        <activity
+            android:name=".AnimateAlongRouteActivity"
+            android:description="@string/animate_route_desc"
+            android:label="@string/animate_route">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
     </application>
 
 </manifest>

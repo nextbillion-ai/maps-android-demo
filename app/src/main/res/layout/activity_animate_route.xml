@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DirectionsActivity">
+    tools:context=".MainActivity">
 
     <com.nbmap.nbmapsdk.maps.MapView
         android:id="@+id/map_view"
@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         app:nbmap_cameraTargetLat="12.99150562"
         app:nbmap_cameraTargetLng="77.61940507"
-        app:nbmap_cameraZoom="11" />
+        app:nbmap_cameraZoom="15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

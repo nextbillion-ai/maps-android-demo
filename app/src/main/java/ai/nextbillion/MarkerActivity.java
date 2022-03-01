@@ -21,8 +21,14 @@ import com.nbmap.nbmapsdk.maps.MapView;
 import com.nbmap.nbmapsdk.maps.NbmapMap;
 import com.nbmap.nbmapsdk.maps.OnMapReadyCallback;
 import com.nbmap.nbmapsdk.maps.Style;
+import com.nbmap.nbmapsdk.style.sources.GeoJsonOptions;
+import com.nbmap.nbmapsdk.utils.BitmapUtils;
 
 import java.util.List;
+
+import ai.nextbillion.maps.plugins.annotation.Symbol;
+import ai.nextbillion.maps.plugins.annotation.SymbolManager;
+import ai.nextbillion.maps.plugins.annotation.SymbolOptions;
 
 public class MarkerActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -39,8 +45,6 @@ public class MarkerActivity extends AppCompatActivity implements OnMapReadyCallb
 
         mapView = findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
-//        mapView.getMapAsync(this);
-
         initPermissionManager();
     }
 
@@ -51,6 +55,7 @@ public class MarkerActivity extends AppCompatActivity implements OnMapReadyCallb
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 addMarker();
+                addSymbol(nbmapMap, mapView, style);
             }
         });
     }
@@ -64,6 +69,19 @@ public class MarkerActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap.removeMarker(marker);
         mMap.addMarker(new MarkerOptions().position(new LatLng(12.97780156,77.59656748)).title("Title"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(12.98208919,77.60329262)).snippet("Snippet"));
+    }
+
+    private void addSymbol(NbmapMap nbmapMap, MapView mapView, Style style){
+        style.addImage("SYMBOL_ICON",
+                BitmapUtils.getBitmapFromDrawable(getResources().getDrawable(R.drawable.nbmap_marker_icon_default)),
+                false);
+        GeoJsonOptions options = new GeoJsonOptions().withTolerance(0.4f);
+        SymbolManager symbolManager = new SymbolManager(mapView, nbmapMap, style, null, options);
+        SymbolOptions symbolOptions = new SymbolOptions()
+                .withLatLng(new LatLng(12.97551913,77.58917229))
+                .withIconImage("SYMBOL_ICON")
+                .withTextField("Symbol");
+        Symbol symbol = symbolManager.create(symbolOptions);
     }
 
     ///////////////////////////////////////////////////////////////////////////
