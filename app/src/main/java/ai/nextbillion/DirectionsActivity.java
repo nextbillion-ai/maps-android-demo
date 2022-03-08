@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nbmap.nbmapsdk.api.NBMapAPIClient;
+import com.nbmap.nbmapsdk.api.NBRoutLineConfig;
+import com.nbmap.nbmapsdk.api.NBRouteLineCallback;
+import com.nbmap.nbmapsdk.lite.diretions.NBRouteLine;
 import com.nbmap.nbmapsdk.maps.MapView;
 import com.nbmap.nbmapsdk.maps.NbmapMap;
 import com.nbmap.nbmapsdk.maps.OnMapReadyCallback;
@@ -42,13 +45,37 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
     //
     ///////////////////////////////////////////////////////////////////////////
 
+    NBRouteLine routeLine;
     private void showDirections() {
         NBMapAPIClient client = new NBMapAPIClient();
-        client.showDirections(
-                new NBLocation(12.96206481,77.56687669),
-                new NBLocation(12.99150562,77.61940507),
-                "test_directions",
-                nbmapMap, DirectionsActivity.this);
+        NBRoutLineConfig config = new NBRoutLineConfig.Builder()
+                .setDestinationIcon(R.drawable.blue_marker)
+                .setOriginIcon(R.mipmap.ic_nb_taxi)
+                .setLineColor("#00ff00")
+                .setRouteName("test_directions")
+                .build();
+        NBLocation origin = new NBLocation(12.96206481, 77.56687669);
+        NBLocation dest = new NBLocation(12.99150562, 77.61940507);
+
+        client.showDirections(origin, dest, config, nbmapMap, this, new NBRouteLineCallback() {
+            @Override
+            public void onRouteRendered(NBRouteLine nbRouteLine) {
+                routeLine = nbRouteLine;
+                routeLine.setLineWidth(5.0f);
+                routeLine.setLineColor("#34ffff");
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+        });
+
+//        client.showDirections(
+//                new NBLocation(12.96206481,77.56687669),
+//                new NBLocation(12.99150562,77.61940507),
+//                "test_directions_2",
+//                nbmapMap, DirectionsActivity.this);
     }
 
 
