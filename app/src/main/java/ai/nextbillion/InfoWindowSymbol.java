@@ -51,6 +51,10 @@ public class InfoWindowSymbol {
     public void init(Style style, String iconId) {
         GeoJsonOptions jsonOptions = new GeoJsonOptions().withMaxZoom(18);
         locationSource = new GeoJsonSource(sourceId, jsonOptions);
+        style.removeLayer(symbolLayerId);
+        style.removeLayer(infoWindowLayerId);
+        style.removeSource(sourceId);
+
         style.addSource(locationSource);
         symbolLayer = new SymbolLayer(symbolLayerId, sourceId).withProperties(
                 iconImage(iconId),

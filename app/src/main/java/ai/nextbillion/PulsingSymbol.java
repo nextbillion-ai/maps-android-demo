@@ -57,6 +57,9 @@ public class PulsingSymbol {
         style.addImage(iconId, icon);
         GeoJsonOptions jsonOptions = new GeoJsonOptions().withMaxZoom(16);
         locationSource = new GeoJsonSource(locationSourceId, jsonOptions);
+        style.removeLayer(symbolLayerId);
+        style.removeLayer(pulsingCircleLayerId);
+        style.removeSource(locationSourceId);
         style.addSource(locationSource);
         symbolLayer = new SymbolLayer(symbolLayerId, locationSourceId).withProperties(
                 iconImage(iconId),

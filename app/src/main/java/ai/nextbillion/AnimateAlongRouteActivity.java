@@ -113,7 +113,12 @@ public class AnimateAlongRouteActivity extends AppCompatActivity implements OnMa
         initVehicleSymbol(nbmapMap, mapView, nbmapMap.getStyle(), originLatLng);
         addOrigin(originLatLng, iconBitmap);
         addDestination(nbmapMap.getStyle(), iconBitmap, destLatLng);
-        routeAnimator = new RouteAnimator(symbolManager, vehicleSymbol, mRouteLine, routePoints);
+        routeAnimator = new RouteAnimator(symbolManager, vehicleSymbol, mRouteLine, routePoints, new RouteAnimator.RouteAnimatorCallback() {
+            @Override
+            public void onAnimationEnd() {
+
+            }
+        });
         routeAnimator.start();
 
     }

@@ -113,7 +113,12 @@ public class DirectionsActivity extends AppCompatActivity implements OnMapReadyC
         initVehicleSymbol(nbmapMap, mapView, nbmapMap.getStyle(), originLatLng);
         addOrigin(originLatLng, iconBitmap);
         addDestination(nbmapMap.getStyle(), iconBitmap, destLatLng);
-        routeAnimator = new RouteAnimator(symbolManager, vehicleSymbol, mRouteLine, routePoints);
+        routeAnimator = new RouteAnimator(symbolManager, vehicleSymbol, mRouteLine, routePoints, new RouteAnimator.RouteAnimatorCallback() {
+            @Override
+            public void onAnimationEnd() {
+                showDirections();
+            }
+        });
         routeAnimator.start();
 
     }

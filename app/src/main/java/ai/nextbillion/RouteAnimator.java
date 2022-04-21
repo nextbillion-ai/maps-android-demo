@@ -24,9 +24,10 @@ public class RouteAnimator {
     private final List<Point> routePoints;
     private final List<LatLng> route = new ArrayList<>();
 
-    private boolean isCanceled =false;
+    private boolean isCanceled = false;
+    private RouteAnimatorCallback callback;
 
-    public RouteAnimator(SymbolManager symbolManager, Symbol vehicleSymbol, RouteLine mRouteLine, List<Point> routePoints) {
+    public RouteAnimator(SymbolManager symbolManager, Symbol vehicleSymbol, RouteLine mRouteLine, List<Point> routePoints, RouteAnimatorCallback callback) {
         this.symbolManager = symbolManager;
         this.vehicleSymbol = vehicleSymbol;
         this.mRouteLine = mRouteLine;
@@ -34,6 +35,7 @@ public class RouteAnimator {
         for (Point point : routePoints) {
             route.add(new LatLng(point.latitude(), point.longitude()));
         }
+        this.callback = callback;
     }
 
     public void start() {
@@ -65,8 +67,15 @@ public class RouteAnimator {
                 } else {
                     LatLng dest = route.get(routeSize - 1);
                     vehicleSymbol.moveTo(symbolManager, dest, duration, 100);
+                    if (callback != null) {
+                        callback.onAnimationEnd();
+                    }
                 }
             }
         }, duration);
+    }
+
+    public interface RouteAnimatorCallback {
+        void onAnimationEnd();
     }
 }
