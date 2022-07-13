@@ -81,6 +81,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".overview.OverviewActivity" />
         </activity>
+
+        <activity android:name=".HeatmapLayerActivity"
+            android:description="@string/description_heat_map_layer"
+            android:label="@string/activity_heat_map_layer">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".overview.OverviewActivity" />
+        </activity>
     </application>
 
 </manifest>
