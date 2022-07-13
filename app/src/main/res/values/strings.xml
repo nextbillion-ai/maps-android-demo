@@ -9,6 +9,8 @@
     <string name="directions">Directions Demo</string>
     <string name="matching">Snap to Roads Demo</string>
     <string name="distance_matrix">DistanceMatrix Demo</string>
+    <string name="description_heat_map_layer">Use HeatmapLayer to visualise earthquakes</string>
+    <string name="activity_heat_map_layer">Heatmap layer</string>
 
     <string name="marker_desc">Marker Demo</string>
     <string name="info_window_desc">InfoWindows with customised background colors</string>
